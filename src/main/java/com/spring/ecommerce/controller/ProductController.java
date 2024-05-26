@@ -26,7 +26,14 @@ public class ProductController {
 //productservice.createProduct(product);
 
 //    to use directly we just need to declare interface reference variable name as written below { private ProductService productService;}
-private ProductService productService;
+    private ProductService productService;
+
+    public ProductController(ProductService productService){
+        this.productService=productService;
+    }
+
+
+
     @PostMapping("/products")
     public void createProduct(){
 //        whenever someone doing post request on "/products"<-- endpoint
@@ -36,9 +43,12 @@ private ProductService productService;
 //        productService.createProduct(product);
     }
     @GetMapping("/products/{id}")
-    public void getProduct(@PathVariable("id") Long productId){
+    public Product getProduct(@PathVariable("id") Long productId){
 //        whenever someone doing get request on "products/{id}"<-- endpoint
 //        this method will be executed
+        Product currentProduct= productService.getSingleProduct(productId);
+        return currentProduct;
+
     }
 
     @GetMapping("/products")
