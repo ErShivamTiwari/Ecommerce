@@ -32,6 +32,7 @@ public class ProductController {
         this.productService=productService;
     }
 
+//    above we are injecting dependency from product srvice to here.
 
 
     @PostMapping("/products")
