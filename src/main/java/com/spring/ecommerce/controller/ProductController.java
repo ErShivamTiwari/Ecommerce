@@ -40,7 +40,7 @@ public class ProductController {
 //        whenever someone doing post request on "/products"<-- endpoint
 //        this method will be executed
 
-
+// adding comment
 //        productService.createProduct(product);
     }
     @GetMapping("/products/{id}")
