@@ -23,6 +23,7 @@ public class FakeStoreProductService implements ProductService{
                 FakeStoreProductDto.class
         );
         return fakeStoreProductDto.toProduct();
+//        it is calling toProduct method from fakeStoreProductDto class.
     }
 
     @Override
